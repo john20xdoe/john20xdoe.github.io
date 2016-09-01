@@ -7,20 +7,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>john20xdoe.github.io</title>
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet"> 
+
 	<!-- Bootstrap core CSS -->
-	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Your custom styles (optional) -->
-	<link href="css/style.css" rel="stylesheet">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/PTSansNarrow.css" rel="stylesheet"> 
+	<link href="css/font-awesome.min.css" rel="stylesheet" >
+	<link href="css/custom.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="js/tether.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 </head>
 
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+	<div class="jumbotron topbanner">
+		<h1>john<i>20</i><b>X</b>doe</h1>
+	</div>
 
+	<div class="container">
+		<div class="row">
+			<nav class="col-sm-3" id="myScrollspy">
+				<ul class="nav nav-pills nav-stacked" id="timeline-nav">
+					<li>
+						<a href="#section1">
+							<h3 class="j-title">Section 1</h3>
+							<sup class="j-short">Sample short description</sup>
+						</a>
+					</li>
+					...
+				</ul>
+			</nav>
+			<div class="col-sm-9">
+				<div id="section1">
+					<h1>Date here</h1>
+					<p>full text here!</p>
+				</div>
+				...
+			</div>
+		</div>
+	</div>
+
+
+</body>
+<script type="text/javascript">
+	(function(){
+		$.ajax();
+	})();		
+</script>
 </html>
