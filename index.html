@@ -10,7 +10,7 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/PTSansNarrow.css" rel="stylesheet"> 
+	<!-- <link href="css/PTSansNarrow.css" rel="stylesheet">  -->
 	<link href="css/font-awesome.min.css" rel="stylesheet" >
 	<link href="css/custom.css" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
@@ -37,7 +37,8 @@
 					...
 				</ul>
 			</nav>
-			<div class="col-sm-9">
+
+			<div class="col-sm-9" id="posts">
 				<div id="section1">
 					<h1>Date here</h1>
 					<p>full text here!</p>
@@ -49,9 +50,44 @@
 
 
 </body>
+
+
 <script type="text/javascript">
-	(function(){
-		$.ajax();
-	})();		
+	$(document).ready(function(){
+		var timeline = null;
+
+		function setElements(){
+			$.each(timeline,function(index,value){
+				$("#posts").append();
+				$("#timeline-nav").append();
+			});
+		};
+
+		function asyncSetTimeline(response){
+			timeline = response;
+			// alert(JSON.stringify(timeline));
+			setElements();
+		}
+
+		function getTimeline(){
+			$.ajax({
+				type: "GET",
+				url: "data/v0.json", 
+				success: function(result,status){
+					// console.log(JSON.stringify(status));
+					if (status == "success"){
+						asyncSetTimeline(result);
+					}
+					else {
+						console.log("Error: "+status);
+						asyncSetTimeline("error");
+					}
+				}
+			});
+		};
+
+		getTimeline();
+		
+	});		
 </script>
 </html>
