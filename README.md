@@ -3,12 +3,11 @@
 
 <p align="center">
   <a href="https://github.com/john20xdoe">
-    <img style=" border-radius: 50%;" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAz8AAAAJDA1ZWUzYTRjLTY2ZDktNDgwMi1hYjM0LWRmOTJjNTliNjhmYQ.jpg" width="128" height="128">
+    <img style=" border-radius: 50%; border-color: #ababab;" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAz8AAAAJDA1ZWUzYTRjLTY2ZDktNDgwMi1hYjM0LWRmOTJjNTliNjhmYQ.jpg" width="128" height="128">
   </a>
-  <h3 align="center">LAB</h3>
   <p align="center">
 .    <br>
-    <a href="https://ph.linkedin.com/in/labermejo"><strong>Full LinkedIn Profile</strong></a>
+    <a href="https://ph.linkedin.com/in/labermejo"><span class="small text-uppercase label label-warning">Full LinkedIn Profile</span></a>
     <br>
     <br>
     <a href="skills/index.md" class="btn btn-primary">Skills</a>
