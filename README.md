@@ -11,11 +11,11 @@
     <a href="https://ph.linkedin.com/in/labermejo"><strong>Full LinkedIn Profile</strong></a>
     <br>
     <br>
-    [Skills](skills/index.md)
+    <a href="skills/index.md" class="btn btn-primary">Skills</a>
     &middot;
-    [Projects](projects/index.md)
+    <a href="projects/index.md" class="btn btn-primary">Projects</a>
     &middot;
-    [Today I Learned](til/index.md)
+    <a href="til/index.md" class="btn btn-primary">Today I Learned</a>
   </p>
 </p>
 <br>
