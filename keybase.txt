@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/arekkushisu
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://john20xdoe.github.io
+  * I am arekkushisu (https://keybase.io/arekkushisu) on keybase.
+  * I have a public key with fingerprint 2F88 CF26 9C22 AAB9 5291  8B14 8462 63D0 D793 88B6
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010191f88f82675b5f85ef38b32e8c4cc82e32958e7fb1c7db99ee365547b5bf35f10a",
+      "fingerprint": "2f88cf269c22aab952918b14846263d0d79388b6",
+      "host": "keybase.io",
+      "key_id": "846263d0d79388b6",
+      "kid": "010191f88f82675b5f85ef38b32e8c4cc82e32958e7fb1c7db99ee365547b5bf35f10a",
+      "uid": "707c5541b47505af8ffa167b32119c19",
+      "username": "arekkushisu"
+    },
+    "service": {
+      "hostname": "john20xdoe.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1501339654,
+  "expire_in": 157680000,
+  "prev": "4f2041070d1c3eb0f5ce7a2f8a0c2e3c348208e7feb5d1198b032f75687d90ee",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.73
+Comment: https://keybase.io/crypto
+
+yMIxAnicrZJbbA1BGMfPaVEaFZHqA5LGukW0JzO7OzuzJ6nQEBKRIBFxPXZ2Z8+Z
+HnaPs3t6dXshFSpogheXUImgKOIeoW0IDalL4kFcoxVSnCKNEGG2ePNoXiYz3//7
+zff/5msvyA3lh5c+X3LycUthe7jjxqFMaPHag4PqJOpaNVK0Tkqy/o2tspjnx5Lc
+kqISgADq0CbEJrKGEUU2QcxWCFVkRkzVNInMFFlHhGGbQhNbVNcZUzSEVEwRtRVk
+Q2BIJZLNnThLp9Lc8QVWFkTTljXdlGXDoDqSdUgoVImqyZpiAQvrCiFUE4kJ1wsy
+RHHU8FiEu+JOHGL95f1D/5/rzvTjMMCmCEGqYgSQYRPbNqCGBQ1C3YR6IPRY2jFW
+M6E20iyZzHgJ7mWkdSWSCFRykwW9Dcz8EVW4CUcG1ZbLInHuJzL0t7VU2vVd010l
+FAnfT3nRgODXpIKUKkZjf2Axyh1LtFRkVLK0x11HikKhNH0e0CECUFF0DaklEqtO
+8TSL8UCBsEaAWME7rFIgVVsGKgQYWNBUGAU2Mhk2xPcYwBQdMhWVyCBoEqPIEl4J
+BYpsY6QRbOmAMSmwt8ZxpSgRZRpxgfR43DH8TJpJ61qvLxsQCueHBg3MCUYtlD9k
++N8BbJud97Ou3Gl+21x2dmLr1c7aBWc3h4vH/Qh3FE3OmzmTP/1YcLMvd9ql6tpz
+ox6ie+TV/fnyhNe3Fs5pyps7MlvT1sBLln8e27PgdkXX4FnOuJb6tt27ti06P2XS
+lfNZo3H86usj4p2zC+xPUxr3HpDxivWbG1u/vFi5afrxou9O95GcSG8T6f6wtHfF
+mAMvj746Xdh8sqy+6NSJpNVQWVi4Z8OdrzuKZmxc6F/AvAq2PyzLoG+H3x1p6ivd
+/zx7OXJ359apbi3cjjcubxiq9/o5W94ci++7OO3WjOz7TeX42ryO7vplT1oL5mWP
+8slzniW6zkTGP2n5WVo1uqL4zKPy0mGT/LUPHvXs/gWFXkc1
+=n9xy
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/arekkushisu
+
+==================================================================
