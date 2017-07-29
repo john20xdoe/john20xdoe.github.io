@@ -6,14 +6,13 @@
     <img style=" border-radius: 50%; border: 5px solid #ababab;" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAz8AAAAJDA1ZWUzYTRjLTY2ZDktNDgwMi1hYjM0LWRmOTJjNTliNjhmYQ.jpg" width="128" height="128">
   </a>
   <p align="center">
-.    <br>
     <a href="https://ph.linkedin.com/in/labermejo"><span class="small text-uppercase label label-success">Full LinkedIn Profile</span></a>
     <br>
     <br>
     <div class="btn-group btn-group-justified">
-    <a href="skills/index.md" class="btn btn-primary">Skills</a>
-    <a href="projects/index.md" class="btn btn-primary">Projects</a>
-    <a href="til/index.md" class="btn btn-primary">Today I Learned</a>
+    <a href="skills/" class="btn btn-default">Skills</a>
+    <a href="projects/" class="btn btn-default">Projects</a>
+    <a href="til/" class="btn btn-default">Today I Learned</a>
     </div>
   </p>
 </p>
