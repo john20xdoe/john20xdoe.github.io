@@ -3,7 +3,7 @@
     <img style=" border-radius: 50%; border: 5px solid #ababab;" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAz8AAAAJDA1ZWUzYTRjLTY2ZDktNDgwMi1hYjM0LWRmOTJjNTliNjhmYQ.jpg" width="128" height="128">
   </a>
   <p align="center">
-    <a href="https://ph.linkedin.com/in/labermejo"><span class="small text-uppercase label label-success">Full LinkedIn Profile <i span="fa fa-linkedin-square"></span></a>
+    <a href="https://ph.linkedin.com/in/labermejo"><span class="small text-uppercase label label-success">Full LinkedIn Profile <i class="fa fa-linkedin-square"><i></span></a>
     <br>
     <br>
     <div class="btn-group btn-group-justified">
