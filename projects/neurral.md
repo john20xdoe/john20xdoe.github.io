@@ -1,3 +1,6 @@
+---
+layout: projects
+---
 # Project Name: Neurral
 #### Project Description
 ```
