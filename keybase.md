@@ -1,5 +1,5 @@
 ---
-permalink: "/keybase.txt"
+permalink: /keybase.txt
 ---
 ==================================================================
 https://keybase.io/arekkushisu
