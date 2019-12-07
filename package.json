@@ -1,0 +1,22 @@
+{
+  "name": "john20xdoe.github.io",
+  "version": "0.2.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john20xdoe/john20xdoe.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/john20xdoe/john20xdoe.github.io/issues"
+  },
+  "homepage": "https://github.com/john20xdoe/john20xdoe.github.io#readme",
+  "dependencies": {
+    "shoelace-css": "^1.0.0-beta24"
+  }
+}
