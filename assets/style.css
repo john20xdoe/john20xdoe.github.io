@@ -1,0 +1,19 @@
+.container {
+  width: 80rem;
+  margin: 2rem auto
+}
+
+.links > .badge {
+  margin-right: 3px;
+}
+
+#footer{
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -150px;
+  font-size: 0.75rem;
+  color: gray;
+  width: 300px;
+  text-align: center;
+}
