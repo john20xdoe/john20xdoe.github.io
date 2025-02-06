@@ -7,6 +7,10 @@ body {
   margin: 2rem auto;
 }
 
+.details-group-example > .row {
+  margin: 1rem 0;
+}
+
 .links > .badge {
   margin-right: 3px;
 }
