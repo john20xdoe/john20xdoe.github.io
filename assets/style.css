@@ -1,19 +1,25 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
 .container {
   width: 80rem;
-  margin: 2rem auto
+  margin: 2rem auto;
 }
 
 .links > .badge {
   margin-right: 3px;
 }
 
-#footer{
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  margin-left: -150px;
+.stale {
+  opacity: 0.5;
+}
+footer {
+  padding: 1rem 0;
+  margin: 0 auto;
   font-size: 0.75rem;
   color: gray;
   width: 300px;
   text-align: center;
+  border-top: 1px solid #e0e0e0;
 }
