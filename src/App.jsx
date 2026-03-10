@@ -23,7 +23,10 @@ function useFetch(url) {
   const [error, setError] = useState(null);
   useEffect(() => {
     fetch(url)
-      .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
       .then(setData)
       .catch(setError);
   }, [url]);

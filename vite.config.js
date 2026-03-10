@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { copyFileSync, mkdirSync, existsSync } from "fs";
-import { resolve } from "path";
+import { copyFileSync, mkdirSync, existsSync, readdirSync } from "fs";
+import { resolve, join } from "path";
 
 export default defineConfig({
   plugins: [
@@ -9,18 +9,26 @@ export default defineConfig({
     {
       name: "copy-data-files",
       closeBundle() {
-        const distData = resolve(__dirname, "dist/data");
-        if (!existsSync(distData)) {
-          mkdirSync(distData, { recursive: true });
+        try {
+          const dataDir = resolve(__dirname, "data");
+          const distData = resolve(__dirname, "dist/data");
+          
+          if (!existsSync(distData)) {
+            mkdirSync(distData, { recursive: true });
+          }
+          
+          // Copy all JSON files from data/ to dist/data/
+          const files = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+          files.forEach(file => {
+            copyFileSync(
+              join(dataDir, file),
+              join(distData, file)
+            );
+          });
+        } catch (error) {
+          console.error('Failed to copy data files:', error);
+          throw error;
         }
-        copyFileSync(
-          resolve(__dirname, "data/skills.json"),
-          resolve(distData, "skills.json")
-        );
-        copyFileSync(
-          resolve(__dirname, "data/links.json"),
-          resolve(distData, "links.json")
-        );
       },
     },
   ],
