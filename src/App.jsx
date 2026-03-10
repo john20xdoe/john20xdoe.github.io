@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
-
-const GITHUB_RAW_BASE =
-  "https://raw.githubusercontent.com/john20xdoe/john20xdoe.github.io/main/src/data";
-const LINKS_URL = `${GITHUB_RAW_BASE}/links.json`;
-const SKILLS_URL = `${GITHUB_RAW_BASE}/skills.json`;
+import skillsData from "./data/skills.json";
+import linksData from "./data/links.json";
 
 // ── Google Analytics ──────────────────────────────────────────────────────────
 function useGoogleAnalytics(id) {
@@ -20,19 +17,6 @@ function useGoogleAnalytics(id) {
     gtag("js", new Date());
     gtag("config", id);
   }, [id]);
-}
-
-// ── Data fetching ─────────────────────────────────────────────────────────────
-function useFetch(url) {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    fetch(url)
-      .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-      .then(setData)
-      .catch(setError);
-  }, [url]);
-  return { data, error };
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -110,8 +94,8 @@ function LinkGroup({ group, links, isOpen, onOpen }) {
 export default function App() {
   useGoogleAnalytics("G-8DL289L3NB");
 
-  const { data: skills, error: skillsError } = useFetch(SKILLS_URL);
-  const { data: links, error: linksError } = useFetch(LINKS_URL);
+  const skills = skillsData;
+  const links = linksData;
 
   const [openGroup, setOpenGroup] = useState("Employment");
 
@@ -346,8 +330,6 @@ export default function App() {
 
           <div className="col-6">
             <h4>I currently work or have worked with:</h4>
-            {skillsError && <p className="error">Failed to load skills.</p>}
-            {!skills && !skillsError && <p className="loading">loading…</p>}
             {skills && skills.map((g) => (
               <SkillRow key={g.category} category={g.category} items={g.items} />
             ))}
@@ -369,8 +351,6 @@ export default function App() {
         <hr />
 
         {/* Link accordions */}
-        {linksError && <p className="error">Failed to load links.</p>}
-        {!links && !linksError && <p className="loading">loading…</p>}
         {links && (
           <div className="details-group-example">
             <section className="row">
@@ -404,7 +384,7 @@ export default function App() {
       </section>
 
       <footer>
-        &copy; <b>2019–2025</b>{" "}
+        &copy; <b>2019–2026</b>{" "}
         <a href="https://github.com/john20xdoe">john20xdoe</a>. Made with{" "}
         <a href="https://vscode.dev">vscode.dev</a>
       </footer>
