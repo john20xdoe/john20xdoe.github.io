@@ -152,8 +152,9 @@ function LinkGroup({ group, links, isOpen, onOpen }) {
 export default function App() {
   useGoogleAnalytics("G-8DL289L3NB");
 
-  const { data: skills, loading: skillsLoading, error: skillsError } = useFetch("/data/skills.json");
-  const { data: links, loading: linksLoading, error: linksError } = useFetch("/data/links.json");
+  const baseUrl = import.meta.env.BASE_URL || "/";
+  const { data: skills, loading: skillsLoading, error: skillsError } = useFetch(`${baseUrl}data/skills.json`);
+  const { data: links, loading: linksLoading, error: linksError } = useFetch(`${baseUrl}data/links.json`);
 
   const [openGroup, setOpenGroup] = useState("Employment");
 
