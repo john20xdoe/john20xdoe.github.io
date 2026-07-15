@@ -166,8 +166,6 @@ export default function App() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200,400,600,700,800&family=Open+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
-
         *, *::before, *::after { box-sizing: border-box; }
 
         body {
@@ -245,18 +243,24 @@ export default function App() {
         /* Alert */
         .sl-alert {
           display: flex;
-          align-items: flex-start;
-          gap: 0.6rem;
-          color: #004480;
-          background-color: #bfdcf6;
-          border: 1px solid #b5d1ea;
+          align-items: center;
+          gap: 0.75rem;
+          color: #333;
+          background-color: #fff;
+          border: 1px solid #e2e8f0;
           border-radius: 0.25rem;
           padding: 0.75rem 1rem;
           margin-bottom: 0.75rem;
           font-size: 0.95rem;
           line-height: 1.5;
         }
-        .sl-alert .icon { flex-shrink: 0; margin-top: 1px; }
+        .sl-alert .icon {
+          flex-shrink: 0;
+          color: #0074d9;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
 
         /* Badges */
         .badge {
@@ -395,14 +399,24 @@ export default function App() {
             </h4>
             <p />
             <div className="sl-alert">
-              <span className="icon">ℹ</span>
+              <span className="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                </svg>
+              </span>
               <span>
                 I am on the process of populating&nbsp;
                 <span className="badge badge-primary">my skills roadmap</span>.
               </span>
             </div>
             <div className="sl-alert">
-              <span className="icon">ℹ</span>
+              <span className="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                </svg>
+              </span>
               <span>
                 I am learning about&nbsp;
                 <span className="badge badge-primary">
