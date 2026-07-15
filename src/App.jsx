@@ -1,4 +1,10 @@
 import { useState, useEffect } from "react";
+import SlDetails from "@shoelace-style/shoelace/dist/react/details/index.js";
+import SlAlert from "@shoelace-style/shoelace/dist/react/alert/index.js";
+import SlBadge from "@shoelace-style/shoelace/dist/react/badge/index.js";
+import SlAvatar from "@shoelace-style/shoelace/dist/react/avatar/index.js";
+import SlDivider from "@shoelace-style/shoelace/dist/react/divider/index.js";
+import SlIcon from "@shoelace-style/shoelace/dist/react/icon/index.js";
 
 // ── Google Analytics ──────────────────────────────────────────────────────────
 function useGoogleAnalytics(id) {
@@ -118,35 +124,31 @@ function SkillRow({ category, items }) {
 // Replicates sl-details — only one open at a time (accordion)
 function LinkGroup({ group, links, isOpen, onOpen }) {
   return (
-    <div className={`sl-details${isOpen ? " open" : ""}`}>
-      <button
-        className="sl-details__summary"
-        onClick={() => onOpen(isOpen ? null : group)}
-        aria-expanded={isOpen}
-      >
-        <span>{group}</span>
-        <span className="sl-details__caret" aria-hidden="true">
-          ▼
-        </span>
-      </button>
-      <div className="sl-details__body-wrapper">
-        <div className="sl-details__body-inner">
-          <div className="sl-details__body links">
-            {links.map((link) => (
-              <a
-                key={link.url}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`badge badge-${link.variant}${link.pulse ? " pulse" : ""}`}
-              >
-                <InlineHTML html={link.label} />
-              </a>
-            ))}
-          </div>
-        </div>
+    <SlDetails
+      summary={group}
+      open={isOpen}
+      onSlShow={() => onOpen(group)}
+      onSlHide={() => onOpen(null)}
+    >
+      <div className="links">
+        {links.map((link) => (
+          <a
+            key={link.url}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SlBadge
+              variant={link.variant === "primary" ? "primary" : link.variant === "secondary" ? "neutral" : "dark"}
+              pill
+              pulse={link.pulse}
+            >
+              <InlineHTML html={link.label} />
+            </SlBadge>
+          </a>
+        ))}
       </div>
-    </div>
+    </SlDetails>
   );
 }
 
@@ -208,10 +210,9 @@ export default function App() {
         .text-right { text-align: right; }
         .text-bold  { font-weight: 700; }
 
-        /* Typography */
-        h1 { font-size: 2.5rem; font-weight: 300; margin: 0 0 0.5rem; }
-        h4 { font-size: 1.25rem; font-weight: 300; margin: 0 0 0.75rem; line-height: 1.5; }
-        p  { margin: 0 0 1rem; }
+        :root {
+          --sl-font-sans: "Inter", "Open Sans", sans-serif;
+        }
 
         .name-tag {
           font-size: clamp(2rem, 5vw, 50px);
@@ -223,68 +224,7 @@ export default function App() {
           gap: 0.4rem;
           line-height: 1.2;
         }
-        .name-tag b { font-weight: 800; }
-
-        /* Avatar */
-        .gh-avatar {
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          vertical-align: middle;
-        }
-
-        /* Divider */
-        .sl-divider, hr {
-          border: none;
-          border-top: 1px solid #ddd;
-          margin: 2rem 0;
-        }
-
-        /* Alert */
-        .sl-alert {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          color: #333;
-          background-color: #fff;
-          border: 1px solid #e2e8f0;
-          border-radius: 0.25rem;
-          padding: 0.75rem 1rem;
-          margin-bottom: 0.75rem;
-          font-size: 0.95rem;
-          line-height: 1.5;
-        }
-        .sl-alert .icon {
-          flex-shrink: 0;
-          color: #0074d9;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        /* Badges */
-        .badge {
-          display: inline-block;
-          font-size: 0.8em;
-          border-radius: 1em;
-          padding: 0.2em 0.6em;
-          vertical-align: baseline;
-          color: #fff;
-          text-decoration: none;
-          transition: opacity 0.1s;
-          cursor: default;
-        }
-        a.badge { cursor: pointer; }
-        a.badge:hover { opacity: 0.82; text-decoration: none; }
-        .badge-primary   { background-color: #0074d9; }
-        .badge-secondary { background-color: #aaa; }
-        .badge-dark      { background-color: #111; }
-
-        .badge.pulse { animation: badge-pulse 1.75s ease infinite; }
-        @keyframes badge-pulse {
-          0%, 100% { box-shadow: 0 0 0 0   rgba(0,116,217,0.5); }
-          50%       { box-shadow: 0 0 0 5px rgba(0,116,217,0);   }
-        }
+        
 
         /* Skill rows */
         .row.tech { margin-top: 0.1rem; margin-bottom: 0.1rem; align-items: baseline; }
@@ -295,56 +235,24 @@ export default function App() {
         /* Roadmap */
         .roadmap-img { max-width: 100%; height: auto; display: block; margin-top: 1rem; }
 
-        /* sl-details accordion */
-        .sl-details {
-          border: 1px solid #ddd;
-          border-radius: 0.25rem;
-          overflow: hidden;
-        }
-        .sl-details__summary {
+        .details-group-example > .row { margin: 0.5rem 0; }
+        
+        .links {
           display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-          background: #fff;
-          border: none;
-          padding: 0.75rem 1rem;
-          cursor: pointer;
-          font-family: inherit;
-          font-size: 1rem;
-          font-weight: 600;
-          color: #111;
-          text-align: left;
+          flex-wrap: wrap;
+          gap: 6px;
         }
-        .sl-details__summary:hover { background: #f7f7f7; }
-        .sl-details__caret {
-          font-size: 0.6rem;
-          color: #aaa;
-          margin-left: 0.5rem;
-          transition: transform 250ms ease;
-        }
-        .sl-details.open .sl-details__caret {
-          transform: rotate(-180deg);
-        }
-        .sl-details__body-wrapper {
-          display: grid;
-          grid-template-rows: 0fr;
-          transition: grid-template-rows 250ms ease;
-          overflow: hidden;
-        }
-        .sl-details.open .sl-details__body-wrapper {
-          grid-template-rows: 1fr;
-        }
-        .sl-details__body-inner {
-          min-height: 0;
-        }
-        .sl-details__body {
-          padding: 0.75rem 1rem;
-          border-top: 1px solid #ddd;
+        .links a {
+          display: inline-flex;
+          text-decoration: none;
         }
 
-        .details-group-example > .row { margin: 0.5rem 0; }
-        .links > .badge { margin-right: 3px; margin-bottom: 3px; }
+        /* Shoelace custom badge overrides */
+        sl-badge[variant="dark"]::part(base) {
+          background-color: #111;
+          color: #fff;
+          border: none;
+        }
 
         /* Footer */
         footer {
@@ -358,9 +266,6 @@ export default function App() {
         }
         footer a { color: gray; }
         footer a:hover { text-decoration: underline; }
-
-        .error   { color: #c00; font-size: 0.85rem; }
-        .loading { color: #aaa; font-size: 0.85rem; }
       `}</style>
 
       <section className="container">
@@ -373,18 +278,18 @@ export default function App() {
         <div className="row">
           <div className="col">
             <p className="name-tag">
-              My name is&nbsp;
-              <img
-                className="gh-avatar"
-                src="https://avatars.githubusercontent.com/u/14521605?s=120&v=4"
-                alt="Lee Alexis Bermejo"
+              <span>My name is</span>
+              <SlAvatar
+                image="https://avatars.githubusercontent.com/u/14521605?s=120&v=4"
+                label="Lee Alexis Bermejo"
+                style={{ "--size": "48px", "verticalAlign": "middle" }}
               />
-              <b>Lee Alexis Bermejo</b>.
+              <span><b>Lee Alexis Bermejo</b>.</span>
             </p>
           </div>
         </div>
 
-        <div className="sl-divider" />
+        <SlDivider style={{ margin: "2rem 0" }} />
 
         {/* Bio + Skills */}
         <section className="row">
@@ -398,32 +303,22 @@ export default function App() {
               networks.
             </h4>
             <p />
-            <div className="sl-alert">
-              <span className="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                </svg>
-              </span>
+            <SlAlert variant="primary" open style={{ marginBottom: "0.75rem" }}>
+              <SlIcon slot="icon" name="info-circle" />
               <span>
                 I am on the process of populating&nbsp;
-                <span className="badge badge-primary">my skills roadmap</span>.
+                <SlBadge variant="primary" pill>my skills roadmap</SlBadge>.
               </span>
-            </div>
-            <div className="sl-alert">
-              <span className="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                </svg>
-              </span>
+            </SlAlert>
+            <SlAlert variant="primary" open style={{ marginBottom: "0.75rem" }}>
+              <SlIcon slot="icon" name="info-circle" />
               <span>
                 I am learning about&nbsp;
-                <span className="badge badge-primary">
+                <SlBadge variant="primary" pill>
                   LLMs, code completions, and prompt engineering
-                </span>.
+                </SlBadge>.
               </span>
-            </div>
+            </SlAlert>
           </div>
 
           <div className="col-6">
@@ -448,7 +343,7 @@ export default function App() {
           </div>
         </section>
 
-        <hr />
+        <SlDivider style={{ margin: "2rem 0" }} />
 
         {/* Link accordions */}
         {linksError && <p className="error">Failed to load links.</p>}

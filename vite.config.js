@@ -7,6 +7,41 @@ export default defineConfig({
   plugins: [
     react(),
     {
+      name: "copy-shoelace-assets",
+      buildStart() {
+        try {
+          const src = resolve(__dirname, "node_modules/@shoelace-style/shoelace/dist/assets");
+          const dest = resolve(__dirname, "public/shoelace/assets");
+          
+          if (!existsSync(src)) {
+            console.warn("Shoelace assets not found. Skipping copy.");
+            return;
+          }
+          
+          const copyDir = (srcDir, destDir) => {
+            if (!existsSync(destDir)) {
+              mkdirSync(destDir, { recursive: true });
+            }
+            const entries = readdirSync(srcDir, { withFileTypes: true });
+            for (const entry of entries) {
+              const srcPath = join(srcDir, entry.name);
+              const destPath = join(destDir, entry.name);
+              if (entry.isDirectory()) {
+                copyDir(srcPath, destPath);
+              } else {
+                copyFileSync(srcPath, destPath);
+              }
+            }
+          };
+          
+          copyDir(src, dest);
+          console.log("Shoelace assets copied to public/shoelace/assets");
+        } catch (error) {
+          console.error("Failed to copy Shoelace assets:", error);
+        }
+      },
+    },
+    {
       name: "copy-data-files",
       closeBundle() {
         try {
