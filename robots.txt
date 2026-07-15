@@ -1,0 +1,104 @@
+# -------------------------------------------------------
+# SEO bots — allowed
+# -------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# -------------------------------------------------------
+# AI training / scraping crawlers — blocked
+# -------------------------------------------------------
+
+# OpenAI
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+# Anthropic
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# Google AI (Gemini training)
+User-agent: Google-Extended
+Disallow: /
+
+# Common Content Crawler (used for AI datasets)
+User-agent: CCBot
+Disallow: /
+
+# Cohere
+User-agent: cohere-ai
+Disallow: /
+
+# Meta AI
+User-agent: FacebookBot
+Disallow: /
+
+# Apple Applebot-Extended (AI training)
+User-agent: Applebot-Extended
+Disallow: /
+
+# Omgili / Webz.io (data broker)
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+# Diffbot
+User-agent: Diffbot
+Disallow: /
+
+# Bytespider (ByteDance / TikTok AI)
+User-agent: Bytespider
+Disallow: /
+
+# PetalBot (Huawei AI)
+User-agent: PetalBot
+Disallow: /
+
+# ImagesiftBot
+User-agent: ImagesiftBot
+Disallow: /
+
+# Scrapy (generic scraper framework)
+User-agent: Scrapy
+Disallow: /
+
+# -------------------------------------------------------
+# Sitemap
+# -------------------------------------------------------

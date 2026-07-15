@@ -1,0 +1,96 @@
+[
+  {
+    "category": "language",
+    "items": [
+      { "name": "javascript" },
+      { "name": "typescript" },
+      { "name": "c#" },
+      { "name": "dart" },
+      { "name": "php", "stale": true },
+      { "name": "java", "stale": true }
+    ]
+  },
+  {
+    "category": "web",
+    "items": [
+      { "name": "reactjs" },
+      { "name": "html5" },
+      { "name": "css3" },
+      { "name": "next.js" },
+      { "name": "sveltejs" },
+      { "name": "angular", "stale": true }
+    ]
+  },
+  {
+    "category": "mobile",
+    "items": [
+      { "name": "flutter" },
+      { "name": "react-native" },
+      { "name": "android" }
+    ]
+  },
+  {
+    "category": "hybrid",
+    "items": [
+      { "name": "expo.dev" },
+      { "name": "next.js" }
+    ]
+  },
+  {
+    "category": "infrastructure",
+    "items": [
+      { "name": "docker" },
+      { "name": "aws" },
+      { "name": "gcp" },
+      { "name": "azure", "stale": true }
+    ]
+  },
+  {
+    "category": "backend",
+    "items": [
+      { "name": "node" },
+      { "name": "expressjs" },
+      { "name": "nestjs" },
+      { "name": "dotnet" }
+    ]
+  },
+  {
+    "category": "database",
+    "items": [
+      { "name": "postgres" },
+      { "name": "mysql" },
+      { "name": "dynamodb" }
+    ]
+  },
+  {
+    "category": "platforms",
+    "items": [
+      { "name": "github" },
+      { "name": "gitlab" },
+      { "name": "bitbucket" },
+      { "name": "azure devops" },
+      { "name": "heroku", "stale": true },
+      { "name": "vercel", "stale": true },
+      { "name": "netlify", "stale": true }
+    ]
+  },
+  {
+    "category": "team",
+    "items": [
+      { "name": "slack" },
+      { "name": "jira" },
+      { "name": "google workspace" },
+      { "name": "ms teams" },
+      { "name": "trello", "stale": true }
+    ]
+  },
+  {
+    "category": "management",
+    "items": [
+      { "name": "agile" },
+      { "name": "scrum" },
+      { "name": "kanban" },
+      { "name": "grows" }
+    ]
+  }
+]
