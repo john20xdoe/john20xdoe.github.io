@@ -170,91 +170,49 @@ export default function App() {
       <style>{`
         *, *::before, *::after { box-sizing: border-box; }
 
-        body {
-          margin: 0;
-          width: 100%;
-          font-family: "Inter", "Open Sans", sans-serif;
-          font-size: 1rem;
-          color: #111;
-          background: #fff;
-          line-height: 1.5;
-          display: flex;
-          flex-direction: column;
-        }
-
-        a { color: #0074d9; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        /* Layout */
-        .container {
-          width: min(80rem, 100%);
-          margin: 2rem auto;
-          padding: 0 1rem;
-        }
-        .row {
-          display: flex;
-          flex-wrap: wrap;
-          margin-right: -1rem;
-          margin-left: -1rem;
-        }
-        .col   { flex: 1 1 0;        padding: 0 1rem; min-width: 0; }
-        .col-3 { flex: 0 0 25%;      max-width: 25%;      padding: 0 1rem; }
-        .col-4 { flex: 0 0 33.3333%; max-width: 33.3333%; padding: 0 1rem; }
-        .col-6 { flex: 0 0 50%;      max-width: 50%;      padding: 0 1rem; }
-        .col-9 { flex: 0 0 75%;      max-width: 75%;      padding: 0 1rem; }
-
-        @media (max-width: 768px) {
-          .col-3, .col-4, .col-6, .col-9 { flex: 0 0 100%; max-width: 100%; }
-        }
-
-        .text-right { text-align: right; }
-        .text-bold  { font-weight: 700; }
-
         :root {
           --sl-font-sans: "Inter", "Open Sans", sans-serif;
         }
 
+        body {
+          margin: 0;
+          width: 100%;
+          font-family: "Inter", "Open Sans", sans-serif;
+        }
+
+        .container {
+          width: 80rem;
+          margin: 2rem auto;
+        }
+
+        .details-group-example > .row {
+          margin: 1rem 0;
+        }
+
+        .links > .badge {
+          margin-right: 3px;
+        }
+
+        .stale {
+          opacity: 0.5;
+        }
+
         .name-tag {
-          font-size: clamp(2rem, 5vw, 50px);
-          font-weight: 300;
-          margin: 0 0 1rem;
-          display: flex;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 0.4rem;
-          line-height: 1.2;
-        }
-        
-
-        /* Skill rows */
-        .row.tech { margin-top: 0.1rem; margin-bottom: 0.1rem; align-items: baseline; }
-        .row.tech .col-3 { font-size: 0.82rem; }
-        .row.tech .col-9 { font-size: 0.9rem; }
-        .stale { opacity: 0.5; }
-
-        /* Roadmap */
-        .roadmap-img { max-width: 100%; height: auto; display: block; margin-top: 1rem; }
-
-        .details-group-example > .row { margin: 0.5rem 0; }
-        
-        .links {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
-        }
-        .links a {
-          display: inline-flex;
-          text-decoration: none;
+          font-size: 50px;
         }
 
-        /* Shoelace custom badge overrides */
-        sl-badge[variant="dark"]::part(base) {
-          background-color: #111;
-          color: #fff;
-          border: none;
+        .light {
+          font-weight: 200;
         }
 
-        /* Footer */
+        .semi {
+          font-weight: 400;
+        }
+
+        .heavy {
+          font-weight: 800;
+        }
+
         footer {
           padding: 1rem 0;
           margin: 0 auto;
@@ -264,8 +222,6 @@ export default function App() {
           text-align: center;
           border-top: 1px solid #e0e0e0;
         }
-        footer a { color: gray; }
-        footer a:hover { text-decoration: underline; }
       `}</style>
 
       <section className="container">
@@ -278,13 +234,12 @@ export default function App() {
         <div className="row">
           <div className="col">
             <p className="name-tag">
-              <span>My name is</span>
+              <span>My name is </span>
               <SlAvatar
                 image="https://avatars.githubusercontent.com/u/14521605?s=120&v=4"
                 label="Lee Alexis Bermejo"
-                style={{ "--size": "48px", "verticalAlign": "middle" }}
               />
-              <span><b>Lee Alexis Bermejo</b>.</span>
+              <span><b> Lee Alexis Bermejo</b>.</span>
             </p>
           </div>
         </div>
