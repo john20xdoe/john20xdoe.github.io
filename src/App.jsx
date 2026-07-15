@@ -126,24 +126,26 @@ function LinkGroup({ group, links, isOpen, onOpen }) {
       >
         <span>{group}</span>
         <span className="sl-details__caret" aria-hidden="true">
-          {isOpen ? "▲" : "▼"}
+          ▼
         </span>
       </button>
-      {isOpen && (
-        <div className="sl-details__body links">
-          {links.map((link) => (
-            <a
-              key={link.url}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`badge badge-${link.variant}${link.pulse ? " pulse" : ""}`}
-            >
-              <InlineHTML html={link.label} />
-            </a>
-          ))}
+      <div className="sl-details__body-wrapper">
+        <div className="sl-details__body-inner">
+          <div className="sl-details__body links">
+            {links.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`badge badge-${link.variant}${link.pulse ? " pulse" : ""}`}
+              >
+                <InlineHTML html={link.label} />
+              </a>
+            ))}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -311,8 +313,31 @@ export default function App() {
           text-align: left;
         }
         .sl-details__summary:hover { background: #f7f7f7; }
-        .sl-details__caret { font-size: 0.6rem; color: #aaa; margin-left: 0.5rem; }
-        .sl-details__body { padding: 0.75rem 1rem; border-top: 1px solid #ddd; }
+        .sl-details__caret {
+          font-size: 0.6rem;
+          color: #aaa;
+          margin-left: 0.5rem;
+          transition: transform 250ms ease;
+        }
+        .sl-details.open .sl-details__caret {
+          transform: rotate(-180deg);
+        }
+        .sl-details__body-wrapper {
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 250ms ease;
+          overflow: hidden;
+        }
+        .sl-details.open .sl-details__body-wrapper {
+          grid-template-rows: 1fr;
+        }
+        .sl-details__body-inner {
+          min-height: 0;
+        }
+        .sl-details__body {
+          padding: 0.75rem 1rem;
+          border-top: 1px solid #ddd;
+        }
 
         .details-group-example > .row { margin: 0.5rem 0; }
         .links > .badge { margin-right: 3px; margin-bottom: 3px; }
