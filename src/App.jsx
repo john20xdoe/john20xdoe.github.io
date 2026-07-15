@@ -108,8 +108,10 @@ function SkillRow({ category, items }) {
 
   return (
     <div className="row tech">
-      <span className="col-3 text-right text-bold">{category}</span>
-      <span className="col-9">
+      <span className="col-4 text-right">
+        <span className="text-bold">{category}</span>://
+        </span>
+      <span className="col-8">
         {parts.map((part, i) => (
           <span key={i} className={part.stale ? "stale" : undefined}>
             {i > 0 && " | "}
