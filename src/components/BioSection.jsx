@@ -3,7 +3,7 @@ import SlIcon from "@shoelace-style/shoelace/dist/react/icon/index.js";
 import SlBadge from "@shoelace-style/shoelace/dist/react/badge/index.js";
 import SlDivider from "@shoelace-style/shoelace/dist/react/divider/index.js";
 
-export function BioSection() {
+export function BioSection({ theme = "light" }) {
   return (
     <div className="col-6">
       <h4>
@@ -43,7 +43,7 @@ export function BioSection() {
       >
         <img
           className="roadmap-img"
-          src="https://roadmap.sh/card/wide/66025f200973993ed05e6549?variant=light&roadmaps=full-stack%2Cfrontend%2Creact%2Cai-engineer"
+          src={`https://roadmap.sh/card/wide/66025f200973993ed05e6549?variant=${theme}&roadmaps=full-stack%2Cfrontend%2Creact%2Cai-engineer`}
           alt="roadmap.sh"
         />
       </a>
