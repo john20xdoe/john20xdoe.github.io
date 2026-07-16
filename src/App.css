@@ -1,0 +1,53 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --sl-font-sans: "Inter", "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  font-family: "Inter", "Open Sans", sans-serif;
+}
+
+.container {
+  width: 80rem;
+  margin: 2rem auto;
+}
+
+.details-group-example > .row {
+  margin: 1rem 0;
+}
+
+.links > .badge {
+  margin-right: 3px;
+}
+
+.stale {
+  opacity: 0.5;
+}
+
+.name-tag {
+  font-size: 50px;
+}
+
+.light {
+  font-weight: 200;
+}
+
+.semi {
+  font-weight: 400;
+}
+
+.heavy {
+  font-weight: 800;
+}
+
+footer {
+  padding: 1rem 0;
+  margin: 0 auto;
+  font-size: 0.75rem;
+  color: gray;
+  width: 300px;
+  text-align: center;
+}

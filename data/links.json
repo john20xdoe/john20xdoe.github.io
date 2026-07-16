@@ -3,32 +3,75 @@
     "group": "Employment",
     "open": true,
     "links": [
-      { "label": "linked<b>in</b>", "url": "https://linkedin.com/in/labermejo", "variant": "primary", "pulse": true }
+      {
+        "label": "linked<b>in</b>",
+        "url": "https://linkedin.com/in/labermejo",
+        "variant": "primary",
+        "pulse": true
+      }
     ]
   },
   {
     "group": "Gaming and Hardware",
     "open": false,
     "links": [
-      { "label": "hw<b>bot</b>", "url": "https://hwbot.org/user/la1255/", "variant": "dark" }
+      {
+        "label": "hw<b>bot</b>",
+        "url": "https://hwbot.org/user/la1255/",
+        "variant": "dark"
+      },
+      {
+        "label": "steam<b>id</b>",
+        "url": "https://steamcommunity.com/id/arekkushisu/",
+        "variant": "dark"
+      }
     ]
   },
   {
     "group": "Blogs and Contact",
     "open": false,
     "links": [
-      { "label": "keybase", "url": "https://keybase.io/arekkushisu", "variant": "secondary" },
-      { "label": "weblog | <b>atangleofyarn</b>", "url": "https://tangleofyarn.wordpress.com", "variant": "secondary" },
-      { "label": "techblog | <b>pinoy.dev</b>", "url": "https://pinoy.dev", "variant": "secondary" }
+      {
+        "label": "keybase",
+        "url": "https://keybase.io/arekkushisu",
+        "variant": "secondary"
+      },
+      {
+        "label": "weblog | <b>atangleofyarn</b>",
+        "url": "https://tangleofyarn.wordpress.com",
+        "variant": "secondary"
+      },
+      {
+        "label": "techblog | <b>pinoy.dev</b>",
+        "url": "https://pinoy.dev",
+        "variant": "secondary"
+      }
     ]
   },
   {
     "group": "Work",
     "open": false,
     "links": [
-      { "label": "git<b>hub</b>", "url": "https://github.com/john20xdoe", "variant": "dark" },
-      { "label": "git<b>lab</b>", "url": "https://gitlab.com/lee.alexis", "variant": "dark" },
-      { "label": "hugging<b>face</b>", "url": "https://huggingface.co/rxcs", "variant": "dark" }
+      {
+        "label": "git<b>hub</b>",
+        "url": "https://github.com/john20xdoe",
+        "variant": "dark"
+      },
+      {
+        "label": "git<b>lab</b>",
+        "url": "https://gitlab.com/zerotonin",
+        "variant": "dark"
+      },
+      {
+        "label": "hugging<b>face</b>",
+        "url": "https://huggingface.co/rxcs",
+        "variant": "dark"
+      },
+      {
+        "label": "docker<b>hub</b>",
+        "url": "https://hub.docker.com/u/la1255",
+        "variant": "dark"
+      }
     ]
   }
 ]
