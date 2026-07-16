@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import SlIconButton from "@shoelace-style/shoelace/dist/react/icon-button/index.js";
 import SlDivider from "@shoelace-style/shoelace/dist/react/divider/index.js";
 
 // Styles
@@ -23,8 +24,37 @@ export default function App() {
 
   const [openGroup, setOpenGroup] = useState("Employment");
 
+  const [theme, setTheme] = useState(() => {
+    return (
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+    );
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("sl-theme-dark");
+    } else {
+      root.classList.remove("sl-theme-dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
   return (
     <>
+      <div className="theme-toggle">
+        <SlIconButton
+          name={theme === "light" ? "moon" : "sun"}
+          label={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+          onClick={toggleTheme}
+          style={{ fontSize: "1.5rem" }}
+        />
+      </div>
       <section className="container">
         <HeroSection />
       </section>
@@ -34,13 +64,13 @@ export default function App() {
 
         {/* Bio + Skills */}
         <section className="row">
-          <BioSection />
+          <BioSection theme={theme} />
           <SkillsSection
             skills={skills}
             loading={skillsLoading}
             error={skillsError}
           />
-        </section>
+        </section >
 
         <SlDivider style={{ margin: "2rem 0", color: "#f2bfff" }} />
 
@@ -52,7 +82,7 @@ export default function App() {
           openGroup={openGroup}
           onOpenGroupChange={setOpenGroup}
         />
-      </section>
+      </section >
 
       <SlDivider style={{ margin: "2rem 0 0" }}></SlDivider>
       <footer>
