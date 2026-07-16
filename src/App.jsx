@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import SlDivider from "@shoelace-style/shoelace/dist/react/divider/index.js";
 import SlIconButton from "@shoelace-style/shoelace/dist/react/icon-button/index.js";
+import SlDivider from "@shoelace-style/shoelace/dist/react/divider/index.js";
 
 // Styles
 import "./App.css";
@@ -70,7 +70,7 @@ export default function App() {
             loading={skillsLoading}
             error={skillsError}
           />
-        </section>
+        </section >
 
         <SlDivider style={{ margin: "2rem 0", color: "#f2bfff" }} />
 
@@ -82,7 +82,7 @@ export default function App() {
           openGroup={openGroup}
           onOpenGroupChange={setOpenGroup}
         />
-      </section>
+      </section >
 
       <SlDivider style={{ margin: "2rem 0 0" }}></SlDivider>
       <footer>
