@@ -27,8 +27,10 @@ export default function App() {
     <>
       <section className="container">
         <HeroSection />
+      </section>
+      <SlDivider style={{ margin: "2rem 0 0" }} />
+      <section className="container">
 
-        <SlDivider style={{ margin: "2rem 0" }} />
 
         {/* Bio + Skills */}
         <section className="row">
@@ -40,7 +42,7 @@ export default function App() {
           />
         </section>
 
-        <SlDivider style={{ margin: "2rem 0" }} />
+        <SlDivider style={{ margin: "2rem 0", color: "#f2bfff" }} />
 
         {/* Link accordions */}
         <LinksSection
@@ -52,10 +54,12 @@ export default function App() {
         />
       </section>
 
+      <SlDivider style={{ margin: "2rem 0 0" }}></SlDivider>
       <footer>
         &copy; <b>2019–2026</b>{" "}
-        <a href="https://github.com/john20xdoe">john20xdoe</a>. Made with{" "}
-        <a href="https://vscode.dev">vscode.dev</a>
+        <a href="https://github.com/john20xdoe">john20xdoe</a>.
+        Made with{" "}
+        <a href="https://vscode.dev">vscode.dev</a> and styled with <a href="https://shoelace.style">shoelace</a>
       </footer>
     </>
   );
