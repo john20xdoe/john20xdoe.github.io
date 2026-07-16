@@ -8,7 +8,7 @@ export function LinkGroup({ group, links, isOpen, onOpen }) {
       summary={group}
       open={isOpen}
       onSlShow={() => onOpen(group)}
-      onSlHide={() => onOpen(null)}
+      onSlHide={() => onOpen((prev) => (prev === group ? null : prev))}
     >
       <div className="links">
         {links.map((link) => (
